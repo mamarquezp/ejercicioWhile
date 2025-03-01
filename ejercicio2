@@ -1,0 +1,11 @@
+// Ejercicio 2 While
+let montoDinero = Number( prompt (`Ingresa el monto de dinero`))
+let tazaInteres = Number( prompt (`Ingresa la taza de interés`))
+let plazo = Number( prompt (`Ingresa el plazo en años`))
+let contador = 1
+let saldo = montoDinero
+while (contador <= plazo) {
+    saldo = saldo+(saldo * tazaInteres/100)
+    contador++
+}
+alert (`Su saldo el año ${plazo} es Q${saldo.toFixed(2)}`)
