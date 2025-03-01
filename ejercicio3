@@ -1,0 +1,6 @@
+//Ejercicio 3 While
+let numero = Number( prompt (`Ingresa un número para la cuenta regresiva`))
+while (1 <= numero) {
+    alert (`${numero}`)
+    numero--    
+}
