@@ -71,7 +71,12 @@ switch(opcionMenuEntero) {
                 break
             case 7:
                 nombreDia = "Domingo"
-                break       
+                break    
+          default:
+                  alert(`Selección no válida`)  
             }
-        alert(`El día es: ${nombreDia}`)       
+     if (nombreDia != null) {
+        alert(`El día es: ${nombreDia}`)            
+     }
+            
 }
