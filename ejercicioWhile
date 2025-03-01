@@ -3,80 +3,85 @@ let opcionMenu = null
 let opcionMenuEntero = 0
 let opcionInvalida = false
 do {
-     if (opcionInvalida){
-        alert(`La opción seleccionada no está dentro del menú`)
-    }
-    opcionMenu = prompt(`Elige una opción del menú:
-    1 - Cálculo de promedio de notas
-    2 - Cálculo de área de un rectángulo
-    3 - Suma de dos números
-    4 - Retorno de nombre del día según número de día`)
-    opcionMenuEntero = parseInt (opcionMenu)
-    if (0 < opcionMenuEntero & opcionMenuEntero < 5){
-        opcionInvalida = false
-    } else {
-        opcionInvalida = true
-    }
-} while (opcionInvalida)
-    
-switch(opcionMenuEntero) {
-    case 1:
-        alert(`Bienvenido al cálculo de promedio de notas (4 notas)`)
-        let suma = 0
-        let i = 1
         do {
-            let nota = Number( prompt(`Ingresa la nota #${i}`))
-            suma += nota                              
-            i++
-        } while (i<=4)
-        let promedio = suma/4
-        alert(`El promedio es: ${promedio.toFixed(2)}`)
-        break
-    case 2:
-        alert(`Bienvenido añ cálculo de área de un rectángulo`)
-        let altura = Number( prompt(`Ingresa el valor de la altura`))
-        let base = Number( prompt(`Ingresa el valor de la base`))
-        let area = base * altura
-        alert(`El área del rectángulo es: ${area.toFixed(2)}`)
-        break
-    case 3:
-        alert(`Bienvenido a suma de dos números`)
-        let numeroUno = Number( prompt(`Ingresa el valor del primer número`))
-        let numeroDos = Number( prompt(`Ingresa el valor del segundo número`))
-        let sumador = numeroUno + numeroDos
-        alert(`La suma de ambos números es: ${sumador}`)
-        break
-    case 4:
-        alert(`Bienvenido al retorno de nombre del día según número de día`)
-        let numeroDia = Number( prompt(`Ingresa el número de día`))
-        let nombreDia = null
-        switch(numeroDia) {
-            case 1:
-                nombreDia = "Lunes"
-                break
-            case 2:
-                nombreDia = "Martes"
-                break
-            case 3:
-                nombreDia = "Miércoles"
-                break
-            case 4:
-                nombreDia = "Jueves"
-                break
-            case 5:
-                nombreDia = "Viernes"
-                break
-            case 6:
-                nombreDia = "Sábado"
-                break
-            case 7:
-                nombreDia = "Domingo"
-                break    
-          default:
-                  alert(`Selección no válida`)  
-            }
-     if (nombreDia != null) {
-        alert(`El día es: ${nombreDia}`)            
-     }
-            
-}
+         if (opcionInvalida){
+            alert(`La opción seleccionada no está dentro del menú`)
+        }
+        opcionMenu = prompt(`Elige una opción del menú:
+        0 - Salir
+        1 - Cálculo de promedio de notas
+        2 - Cálculo de área de un rectángulo
+        3 - Suma de dos números
+        4 - Retorno de nombre del día según número de día`)
+        opcionMenuEntero = parseInt (opcionMenu)
+        if (0 <= opcionMenuEntero & opcionMenuEntero < 5){
+            opcionInvalida = false
+        } else {
+            opcionInvalida = true
+        }
+        } while (opcionInvalida)
+        
+        switch(opcionMenuEntero) {
+        case 0:
+            alert(`Hasta la próxima`)
+            break
+        case 1:
+            alert(`Bienvenido al cálculo de promedio de notas (4 notas)`)
+            let suma = 0
+            let i = 1
+            do {
+                let nota = Number( prompt(`Ingresa la nota #${i}`))
+                suma += nota                              
+                i++
+            } while (i<=4)
+            let promedio = suma/4
+            alert(`El promedio es: ${promedio.toFixed(2)}`)
+            break
+        case 2:
+            alert(`Bienvenido añ cálculo de área de un rectángulo`)
+            let altura = Number( prompt(`Ingresa el valor de la altura`))
+            let base = Number( prompt(`Ingresa el valor de la base`))
+            let area = base * altura
+            alert(`El área del rectángulo es: ${area.toFixed(2)}`)
+            break
+        case 3:
+            alert(`Bienvenido a suma de dos números`)
+            let numeroUno = Number( prompt(`Ingresa el valor del primer número`))
+            let numeroDos = Number( prompt(`Ingresa el valor del segundo número`))
+            let sumador = numeroUno + numeroDos
+            alert(`La suma de ambos números es: ${sumador}`)
+            break
+        case 4:
+            alert(`Bienvenido al retorno de nombre del día según número de día`)
+            let numeroDia = Number( prompt(`Ingresa el número de día`))
+            let nombreDia = null
+            switch(numeroDia) {
+                case 1:
+                    nombreDia = "Lunes"
+                    break
+                case 2:
+                    nombreDia = "Martes"
+                    break
+                case 3:
+                    nombreDia = "Miércoles"
+                    break
+                case 4:
+                    nombreDia = "Jueves"
+                    break
+                case 5:
+                    nombreDia = "Viernes"
+                    break
+                case 6:
+                    nombreDia = "Sábado"
+                    break
+                case 7:
+                    nombreDia = "Domingo"
+                    break    
+              default:
+                      alert(`Selección no válida`)  
+                }
+         if (nombreDia != null) {
+            alert(`El día es: ${nombreDia}`)            
+         }
+        }
+} while (opcionMenuEntero)
